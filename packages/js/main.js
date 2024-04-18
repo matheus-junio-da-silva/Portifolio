@@ -165,6 +165,31 @@ function scrollHeader() {
 }
 window.addEventListener("scroll", scrollHeader);
 
+/*==================== SEND EMAIL ====================*/
+
+const contactForm = document.getElementById('contact-send-form'),
+  contactMessage = document.getElementById('contact-message')
+const sendEmail = (e) =>{
+  e.preventDefault()
+                  //serviceID - templateID - #form - publickey 
+  emailjs.sendForm('service_cotgayf','template_oxxg70t','#contact-send-form','OB2cEXdcdzFcku7cg')
+  .then(() => {
+    // Show sent message
+    contactMessage.textContent = 'Mensagem enviada com sucesso ✅'
+    // Remove message after five seconds
+    setTimeout(() => {
+      contactMessage.textContent = ''
+    }, 5000)
+    // Clear input fields
+    contactForm.reset()
+    }, () => {
+    // Show error message
+      contactMessage.textContent = 'Mensagem nao enviada (service error) ❌'
+    });
+}
+contactForm.addEventListener('submit', sendEmail)
+  
+
 /*==================== SHOW SCROLL UP ====================*/
 function scrollUp() {
   const scrollUp = document.getElementById("scroll-up");

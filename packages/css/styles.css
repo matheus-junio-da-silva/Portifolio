@@ -927,6 +927,11 @@ img {
   padding: 0.25rem 0.5rem 0.5rem 0;
 }
 
+.contact__message {
+  color: var(--text-color);
+  font-size: var(--small-font-size);
+}
+
 /*==================== FOOTER ====================*/
 .footer {
   padding-top: 2rem;

@@ -932,6 +932,10 @@ img {
   font-size: var(--small-font-size);
 }
 
+.button__submit {
+  border: none;
+}
+
 /*==================== FOOTER ====================*/
 .footer {
   padding-top: 2rem;
